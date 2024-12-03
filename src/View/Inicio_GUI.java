@@ -42,6 +42,11 @@ public class Inicio_GUI extends javax.swing.JFrame {
         jPanel1.setLayout(null);
 
         rec_BTN.setText("Receituario");
+        rec_BTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rec_BTNActionPerformed(evt);
+            }
+        });
         jPanel1.add(rec_BTN);
         rec_BTN.setBounds(60, 400, 700, 100);
 
@@ -90,7 +95,11 @@ public class Inicio_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comp_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comp_BTNActionPerformed
-        // TODO add your handling code here:
+        try {
+            Controller.Declaraçao_DAO.Impressão3();
+        } catch (Exception ex) {
+            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_comp_BTNActionPerformed
 
     private void sair_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sair_BTNActionPerformed
@@ -104,6 +113,14 @@ public class Inicio_GUI extends javax.swing.JFrame {
             Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_ates_BTNActionPerformed
+
+    private void rec_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rec_BTNActionPerformed
+        try {
+            Controller.Receituario_DAO.Impressão2();
+        } catch (Exception ex) {
+            Logger.getLogger(Inicio_GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_rec_BTNActionPerformed
 
     /**
      * @param args the command line arguments
